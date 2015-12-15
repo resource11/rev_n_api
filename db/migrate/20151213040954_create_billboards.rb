@@ -7,7 +7,7 @@ class CreateBillboards < ActiveRecord::Migration
       t.string :subtext02, null: false
       t.string :color_scheme, null: false
       t.string :anim_option, null: false
-      # t.references :user
+      t.references :user, index: true, foreign_key: true
       t.timestamps null: false
     end
   end

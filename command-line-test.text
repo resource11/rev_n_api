@@ -1,0 +1,52 @@
+#  register user
+curl --include --request POST --header "Content-Type: application/json" -d '{
+  "credentials": {
+    "email": "a@c.a",
+    "password": "abc123",
+    "password_confirmation": "abc123"
+  }
+}' http://localhost:3000/register
+
+
+# 2 login user
+curl --request POST --header "Content-Type: application/json" -d '{
+  "credentials": {
+    "email": "k@k.com",
+    "password": "a"
+  }
+}' http://localhost:3000/login
+
+
+
+# 3 logout user
+curl --request DELETE --header "Authorization: Token token=42a36fc969548c1a43b6a1b40aec614c" http://localhost:3000/logout/1
+
+# 4 list books
+curl --header "Authorization: Token token=42a36fc969548c1a43b6a1b40aec614c" http://localhost:3000/users
+
+or
+
+curl http://localhost:3000/users
+
+
+# 5 create a book
+curl --request POST --header "Authorization: Token token=42a36fc969548c1a43b6a1b40aec614c" --header "Content-Type: application/json" -d '{
+  "book": {
+    "title":"The Hold",
+    "isbn":"abc123def456"
+  }
+}'  http://localhost:3000/books
+
+
+# 5 create a billboard
+curl --request POST --header "Authorization: Token token=330fd3e60818e36d6a7fb052acef18d2" --header "Content-Type: application/json" -d '{
+  "billboard": {
+    "name":"billboard 4",
+    "title":"chocolate",
+    "subtext01":"yum",
+    "subtext02":"gimme some",
+    "color_scheme":"red",
+    "anim_option":"circle",
+    "user_id": 5
+  }
+}'  http://localhost:3000/billboards

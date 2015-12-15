@@ -23,17 +23,12 @@ ActiveRecord::Schema.define(version: 20151213040954) do
     t.string   "subtext02",    null: false
     t.string   "color_scheme", null: false
     t.string   "anim_option",  null: false
+    t.integer  "user_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
-  create_table "books", force: :cascade do |t|
-    t.string   "title"
-    t.string   "isbn"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+  add_index "billboards", ["user_id"], name: "index_billboards_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",           null: false
@@ -46,4 +41,5 @@ ActiveRecord::Schema.define(version: 20151213040954) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["token"], name: "index_users_on_token", unique: true, using: :btree
 
+  add_foreign_key "billboards", "users"
 end

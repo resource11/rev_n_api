@@ -1,5 +1,5 @@
 class Billboard < ActiveRecord::Base
-  # belongs_to :user
+  belongs_to :user
   validates :name, presence: true
   validates :title, presence: true
   validates :subtext01, presence: true

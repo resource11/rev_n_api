@@ -23,8 +23,8 @@ class BillboardsController < OpenReadController
 
   # POST /billboards
   def create
-    # @billboard = current_user.billboards.new(billboard_params)
-    @billboard = billboards.new(billboard_params)
+    @billboard = current_user.billboards.new(billboard_params)
+    # @billboard = billboards.new(billboard_params)
 
     if @billboard.save
       render json: @billboard, status: :created, location: @billboard
@@ -50,12 +50,12 @@ class BillboardsController < OpenReadController
   end
 
   def set_billboard
-    # @billboard = current_user.billboards.find(params[:id])
-    @billboard = billboards.find(params[:id])
+    @billboard = current_user.billboards.find(params[:id])
+    # @billboard = billboards.find(params[:id])
   end
 
   def billboard_params
-    params.require(:billboard).permit(:title, :isbn)
+    params.require(:billboard).permit(:name, :title, :subtext01, :subtext02, :color_scheme, :anim_option)
   end
 
   private :set_billboard, :billboard_params
