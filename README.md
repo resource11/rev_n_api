@@ -1,64 +1,31 @@
+# Rev(n) Backend
+Ruby on Rails backend for Rev(n) App
+* [Front end repository](https://github.com/resource11/rev_n_frontend/tree/gh-pages)
+* [Deployed site](http://resource11.github.io/rev_n_frontend)
+* [Deployed backend](https://stormy-oasis-7808.herokuapp.com/)
 
-# User authentication
+##Project Overview
+SillySpeed Me! is an app designed to allow the user to list a bike for sale and favorite a bike they'd like to buy. The target audience is those who love to race cyclocross, particularly on a singlespeed (aka, a SillySpeed) bike!.
 
-## Register
+## Database
 
-```
-curl --include --request POST --header "Content-Type: application/json" -d '{
-  "credentials": {
-    "email": "an@example.email",
-    "password": "an example password",
-    "password_confirmation": "an example password"
-  }
-}' http://localhost:3000/register
-```
+The database contains 2 tables:
+* users
+* billboards
 
-## Login
+[ERD diagram](TBD)
 
-```
-curl --request POST --header "Content-Type: application/json" -d '{
-  "credentials": {
-    "email": "an@example.email",
-    "password": "an example password"
-  }
-}' http://localhost:3000/login
-```
+#Planning
+I took a decent amount of time thinking about my models and how they related before I started building the backend. Once a structure was determined, I consulted many individuals to confirm that my models and rationale was sound.
 
-## Logout
+This project was a great first step for revisting what I have learned with RoR.
 
-```
-curl --request DELETE --header "Authorization: Token token=c017d611187e3350baffc52d35a4df69" http://localhost:3000/logout/1
-```
+## Next Steps
+- Going forward, I'd love to add more models for different design scenarios and more in-depth structure for the models in general.
 
-# Users
 
-## List
 
-```
-curl --header "Authorization: Token token=c017d611187e3350baffc52d35a4df69" http://localhost:3000/users
-```
 
-# Books
 
-## List
 
-```
-curl --header "Authorization: Token token=c017d611187e3350baffc52d35a4df69" http://localhost:3000/books
-```
 
-**OR**
-
-```
-curl http://localhost:3000/books
-```
-
-## Create
-
-```
-curl --request POST --header "Authorization: Token token=be249dc0231396806f24c953cafae03a" --header "Content-Type: application/json" -d '{
-  "book": {
-    "title":"The Hold",
-    "isbn":"abc123def456"
-  }
-}'  http://localhost:3000/books
-```
