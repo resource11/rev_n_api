@@ -5,7 +5,7 @@ Ruby on Rails backend for Rev(n) App
 * [Deployed backend](https://stormy-oasis-7808.herokuapp.com/)
 
 ##Project Overview
-SillySpeed Me! is an app designed to allow the user to list a bike for sale and favorite a bike they'd like to buy. The target audience is those who love to race cyclocross, particularly on a singlespeed (aka, a SillySpeed) bike!.
+Rev(n) is an app designed to shorten the design/development iteration cycles that occur when clients and agencies partner on high-budget deliverables, i.e., large format digital displays in the high-traffic consumer space.
 
 ## Database
 
@@ -13,7 +13,7 @@ The database contains 2 tables:
 * users
 * billboards
 
-[ERD diagram](TBD)
+[ERD diagram](https://www.dropbox.com/s/gbybcpbelwhuv7t/Rev_n_ERD.png?dl=0)
 
 #Planning
 I took a decent amount of time thinking about my models and how they related before I started building the backend. Once a structure was determined, I consulted many individuals to confirm that my models and rationale was sound.
