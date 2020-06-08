@@ -88,7 +88,7 @@ GEM
       pry (>= 0.9.10)
     puma (4.3.5)
       nio4r (~> 2.0)
-    rack (1.6.4)
+    rack (1.6.13)
     rack-cors (1.0.6)
       rack (>= 1.6.0)
     rack-test (0.6.3)
